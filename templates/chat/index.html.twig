@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    ChatRoom
+{% endblock %}
+
+{% block body %}
+    <h1>Chatroom</h1>
+    <div {{ vue_component('ChatLog') }}></div>
+    <div {{ vue_component('ChatComposer') }}></div>
+{% endblock %}
