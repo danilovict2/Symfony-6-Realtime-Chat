@@ -1,14 +1,15 @@
 <template>
     <div class="chat-log">
-        <chat-message></chat-message>
-        <chat-message></chat-message>
-        <chat-message></chat-message>
+        <chat-message v-for="message in messages" :message="message.message" :user="message.user"></chat-message>
     </div>
 </template>
 
 <script setup>
 import ChatMessage from './ChatMessage.vue';
 
+defineProps({
+    messages: Array
+});
 
 </script>
 

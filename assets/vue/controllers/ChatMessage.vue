@@ -6,10 +6,11 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
 
-let message = ref('This is some message');
-let user = ref('John Doe');
+defineProps({
+    user: String,
+    message: String
+})
 
 </script>
 
