@@ -1,5 +1,4 @@
 <template>
-    <h1>Chatroom</h1>
     <chat-log :messages="messages"></chat-log>
     <chat-composer @messageSent="handleSentMessage"></chat-composer>
 </template>

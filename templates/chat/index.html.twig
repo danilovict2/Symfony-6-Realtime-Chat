@@ -5,5 +5,18 @@
 {% endblock %}
 
 {% block body %}
-    <div {{ vue_component('ChatRoom') }}></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <div class="card">
+                    <div class="card-header p-3">
+                            Chatroom
+                    </div>
+                    <div class="card-body gap-2">
+                        <div {{ vue_component('ChatRoom') }}></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 {% endblock %}
