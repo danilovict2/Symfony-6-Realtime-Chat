@@ -1,15 +1,14 @@
 <template>
     <div class="chat-message">
-        <p>{{ message }}</p>
-        <small>{{ user }}</small>
+        <p>{{ message.message }}</p>
+        <small>{{ message.sender.name }}</small>
     </div>
 </template>
 
 <script setup>
 
 defineProps({
-    user: String,
-    message: String
+    message: Object
 })
 
 </script>

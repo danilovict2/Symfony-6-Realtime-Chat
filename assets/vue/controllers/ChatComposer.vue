@@ -13,8 +13,10 @@ let messageText = ref('');
 
 function sendMessage() {
     emit('messageSent', {
-        user: 'John Doe',
         message: messageText.value,
+        sender: {
+            name: 'John Doe'
+        }, 
     });
     messageText.value = '';
 }
