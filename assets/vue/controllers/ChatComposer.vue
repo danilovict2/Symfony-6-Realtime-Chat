@@ -6,17 +6,17 @@
 </template>
 
 <script setup>
+import axios from 'axios';
 import { ref } from 'vue';
 
 const emit = defineEmits(['messageSent']);
 let messageText = ref('');
 
 function sendMessage() {
-    emit('messageSent', {
-        message: messageText.value,
-        sender: {
-            name: 'John Doe'
-        }, 
+    axios.post('/message/create', null, { 
+        params: {
+            message: messageText.value
+        }
     });
     messageText.value = '';
 }

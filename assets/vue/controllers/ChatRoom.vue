@@ -29,13 +29,5 @@ onBeforeMount(() => {
     });
 });
 
-function handleSentMessage(message) {
-    axios.post('/message/create', null, { 
-        params: {
-            message: message.message
-        }
-    });
-    
-}
 
 </script>
