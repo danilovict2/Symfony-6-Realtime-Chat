@@ -30,7 +30,7 @@ class MessagesController extends AbstractController
         );
     }
 
-    #[Route('/message/create', name: 'message_create', methods: ['POST'])]
+    #[Route('/message/create', name: 'message_create', methods: ['POST', 'GET'])]
     public function create(EntityManagerInterface $entityManager, Request $request, Pusher $pusher): Response
     {
         $user = $this->getUser();
@@ -43,7 +43,7 @@ class MessagesController extends AbstractController
         $entityManager->persist($message);
         $entityManager->flush();
 
-        $pusher->trigger('chatroom', 'message.sent', [
+        $pusher->trigger('presence-chatroom', 'message.sent', [
             'message' => $message->getMessage(),
             'sender' => $message->getSender()->getName()
         ]);
