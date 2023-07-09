@@ -30,13 +30,12 @@ class MessagesController extends AbstractController
         );
     }
 
-    #[Route('/message/create', name: 'message_create', methods: ['POST', 'GET'])]
+    #[Route('/message/create', name: 'message_create', methods: ['POST'])]
     public function create(EntityManagerInterface $entityManager, Request $request, Pusher $pusher): Response
     {
         $user = $this->getUser();
         $message = new Message();
         
-
         $message->setSender($user);
         $message->setMessage($request->get('message'));
 
