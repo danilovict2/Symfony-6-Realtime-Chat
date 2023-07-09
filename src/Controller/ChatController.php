@@ -10,6 +10,12 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class ChatController extends AbstractController
 {
+    #[Route('/')]
+    public function redirectFromHomepage(): Response
+    {
+        return $this->redirectToRoute('chat_index');
+    }
+
     #[Route('/chat', name: 'chat_index')]
     public function index(): Response
     {
